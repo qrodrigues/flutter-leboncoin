@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leboncoin/bottom_bar/bottom_bar.dart';
+import 'package:leboncoin/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomBar(),
+      home: const HomePage(),
     );
   }
 }

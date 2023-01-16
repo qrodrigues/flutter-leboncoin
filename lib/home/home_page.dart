@@ -3,14 +3,14 @@ import 'package:leboncoin/product/add_product_page.dart';
 import 'package:leboncoin/show_product/favorites_page.dart';
 import 'package:leboncoin/show_product/product_page.dart';
 
-class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<BottomBar> createState() => _BottomBarState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _BottomBarState extends State<BottomBar> {
+class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);

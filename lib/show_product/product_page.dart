@@ -20,6 +20,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Annonces"),),
         body: CustomScrollView(
       primary: false,
       slivers: <Widget>[ProductList(products)],
