@@ -1,6 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  CollectionReference advertisements = FirebaseFirestore.instance.collection('advertisements');
+
+  Future<List> getAdvertisements() async {
+    // Get docs from collection reference
+    QuerySnapshot querySnapshot = await advertisements.get();
+    // Get data from docs and convert map to List
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+
+    return allData;
+  }
   runApp(const MyApp());
 }
 
@@ -18,6 +36,7 @@ class MyApp extends StatelessWidget {
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
+        // changing the primarySwatch below to Colors.green and then invoke
         // "hot reload" (press "r" in the console where you ran "flutter run",
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
@@ -33,7 +52,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
+  // that it has a State object (defned below) that contains fields that affect
   // how it looks.
 
   // This class is the configuration for the state. It holds the values (in this
@@ -63,6 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
