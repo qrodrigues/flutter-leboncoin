@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
-  const TextInput(this.label, this.controller, {super.key});
+  const TextInput(this.label,this.size, this.controller, {super.key});
 
   final String label;
+  final int size;
   final TextEditingController controller;
 
   @override
@@ -14,6 +15,7 @@ class TextInput extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
             border: const OutlineInputBorder(), labelText: label),
+        maxLines: size,
       ),
     );
   }

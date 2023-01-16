@@ -25,9 +25,9 @@ class _AddProductPageState extends State<AddProductPage> {
             padding: const EdgeInsets.all(10),
             child: Column(
               children: [
-                TextInput("Titre de l'annonce", titleController),
-                TextInput("Prix", priceController),
-                TextInput("Description", descriptionController),
+                TextInput("Titre de l'annonce", 1, titleController),
+                TextInput("Prix", 1, priceController),
+                TextInput("Description", 10, descriptionController),
                 PublishButton(() {
                   print(titleController.text);
                   print(priceController.text);
