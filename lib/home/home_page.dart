@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leboncoin/product/add_product_page.dart';
 import 'package:leboncoin/show_product/favorites_page.dart';
 import 'package:leboncoin/show_product/product_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,8 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     ProductPage(),
     FavoritesPage(),
@@ -33,18 +32,18 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Recherche',
+            icon: const Icon(Icons.search),
+            label: AppLocalizations.of(context)!.search,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'Favoris',
+            icon: const Icon(Icons.star),
+            label: AppLocalizations.of(context)!.favorites,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Créer',
+            icon: const Icon(Icons.add),
+            label: AppLocalizations.of(context)!.create,
           )
         ],
         currentIndex: _selectedIndex,

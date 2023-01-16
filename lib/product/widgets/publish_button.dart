@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PublishButton extends StatelessWidget {
   const PublishButton(this.onPressed, {super.key});
@@ -15,6 +16,6 @@ class PublishButton extends StatelessWidget {
           Icons.check,
           size: 24.0,
         ),
-        label: const Text('Publier'));
+        label: Text(AppLocalizations.of(context)!.publish));
   }
 }

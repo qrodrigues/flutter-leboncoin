@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
-  const TextInput(this.label,this.size, this.controller, {super.key});
+  const TextInput(this.label, this.size, this.controller, {super.key});
 
   final String label;
   final int size;
@@ -14,7 +14,10 @@ class TextInput extends StatelessWidget {
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-            border: const OutlineInputBorder(), labelText: label),
+            border: const OutlineInputBorder(),
+            labelText: label,
+            filled: true,
+            fillColor: Colors.white),
         maxLines: size,
       ),
     );

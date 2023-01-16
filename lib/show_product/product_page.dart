@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leboncoin/show_product/widgets/product.dart';
 import 'package:leboncoin/show_product/widgets/product_list.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -20,10 +21,13 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Annonces"),),
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.adverts),
+        ),
+        backgroundColor: Colors.greenAccent,
         body: CustomScrollView(
-      primary: false,
-      slivers: <Widget>[ProductList(products)],
-    ));
+          primary: false,
+          slivers: <Widget>[ProductList(products)],
+        ));
   }
 }

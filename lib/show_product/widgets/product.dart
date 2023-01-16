@@ -8,12 +8,15 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Align(alignment: Alignment.topLeft, child: Text(title)),
-      Align(
-        alignment: Alignment.topRight,
-        child: Text(price.toString()),
-      )
-    ]);
+    return Container(
+      color: Colors.white,
+      child: Column(children: <Widget>[
+        Align(alignment: Alignment.topLeft, child: Text(title)),
+        Align(
+          alignment: Alignment.topRight,
+          child: Text(price.toString()),
+        )
+      ]),
+    );
   }
 }

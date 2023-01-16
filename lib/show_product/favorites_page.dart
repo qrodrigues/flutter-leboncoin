@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leboncoin/show_product/widgets/product.dart';
 import 'package:leboncoin/show_product/widgets/product_list.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({super.key});
@@ -18,10 +19,13 @@ class _FavoritesPageState extends State<FavoritesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Favoris"),),
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.favorites),
+        ),
+        backgroundColor: Colors.greenAccent,
         body: CustomScrollView(
-      primary: false,
-      slivers: <Widget>[ProductList(products)],
-    ));
+          primary: false,
+          slivers: <Widget>[ProductList(products)],
+        ));
   }
 }
