@@ -8,26 +8,29 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
-          color: Colors.white),
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+        color: Colors.white,
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(children: <Widget>[
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(title),
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Text(
-              price.toString(),
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(title),
             ),
-          )
-        ]),
+            Align(
+              alignment: Alignment.topRight,
+              child: Text(
+                price.toString(),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

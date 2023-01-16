@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/product/add_product_page.dart';
 import 'package:leboncoin/show_product/favorites_page.dart';
 import 'package:leboncoin/show_product/product_page.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
