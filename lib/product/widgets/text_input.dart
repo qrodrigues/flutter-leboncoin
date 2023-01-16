@@ -14,10 +14,13 @@ class TextInput extends StatelessWidget {
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
-            border: const OutlineInputBorder(),
-            labelText: label,
-            filled: true,
-            fillColor: Colors.white),
+          labelText: label,
+          filled: true,
+          fillColor: Colors.white,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        ),
         maxLines: size,
       ),
     );
