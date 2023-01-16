@@ -24,7 +24,7 @@ class _ProductPageState extends State<ProductPage> {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.adverts),
         ),
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.greenAccent.withOpacity(0.8),
         body: CustomScrollView(
           primary: false,
           slivers: <Widget>[ProductList(products)],

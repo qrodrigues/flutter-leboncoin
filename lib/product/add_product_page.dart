@@ -21,7 +21,7 @@ class _AddProductPageState extends State<AddProductPage> {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.create_advert),
         ),
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.greenAccent.withOpacity(0.8),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(10),
