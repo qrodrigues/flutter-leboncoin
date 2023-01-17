@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:leboncoin/show_product/widgets/product_card.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList(this.products, {super.key});
 
-  final List<Widget> products;
+  final List<ProductCard> products;
 
   @override
   Widget build(BuildContext context) {

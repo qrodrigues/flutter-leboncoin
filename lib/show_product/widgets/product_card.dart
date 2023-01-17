@@ -1,24 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:leboncoin/product/models/product.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
-    required this.title,
-    required this.price,
-    required this.description,
+  const ProductCard(
+    this.product, {
     super.key,
   });
 
-  factory ProductCard.fromJson(dynamic json) {
-    return ProductCard(
-      title: json['titre'] as String,
-      price: double.parse(json['prix'].toString()),
-      description: json['description'] as String,
-    );
-  }
-
-  final String title;
-  final double price;
-  final String description;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +24,12 @@ class ProductCard extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.topLeft,
-              child: Text(title),
+              child: Text(product.title),
             ),
             Align(
               alignment: Alignment.topRight,
               child: Text(
-                price.toString(),
+                product.price.toString(),
               ),
             )
           ],

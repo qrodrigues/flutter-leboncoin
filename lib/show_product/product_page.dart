@@ -26,7 +26,7 @@ class _ProductPageState extends State<ProductPage> {
 
       final products = <ProductCard>[];
       for (var i = 0; i < allData.length; i++) {
-        products.add(ProductCard.fromJson(allData[i]));
+        products.add(ProductCard(Product.fromJson(allData[i])));
       }
 
       return products;
