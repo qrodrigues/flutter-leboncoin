@@ -20,14 +20,14 @@ class _ProductPageState extends State<ProductPage> {
 
     Future<List<ProductCard>> getProducts() async {
       // Get docs from collection reference
-      final querySnapshot = await productsCollection.get();
+      final productsData = await productsCollection.get();
       // Get data from docs and convert map to List
-      final productsData = querySnapshot.docs.map((doc) => doc.data()).toList();
-      print(productsData);
+      final jsonProductsData =
+          productsData.docs.map((doc) => doc.data()).toList();
 
       final products = <ProductCard>[];
-      for (var i = 0; i < productsData.length; i++) {
-        products.add(ProductCard(Product.fromJson(productsData[i])));
+      for (var i = 0; i < jsonProductsData.length; i++) {
+        products.add(ProductCard(Product.fromJson(jsonProductsData[i])));
       }
       products.sort((a, b) => a.product.date.compareTo(b.product.date));
 
