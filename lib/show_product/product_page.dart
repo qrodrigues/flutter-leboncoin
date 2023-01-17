@@ -15,18 +15,18 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
-    final CollectionReference advertisements =
+    final CollectionReference productsCollection =
         FirebaseFirestore.instance.collection('advertisements');
 
     Future<List<ProductCard>> getAdvertisements() async {
       // Get docs from collection reference
-      final querySnapshot = await advertisements.get();
+      final querySnapshot = await productsCollection.get();
       // Get data from docs and convert map to List
-      final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+      final productsData = querySnapshot.docs.map((doc) => doc.data()).toList();
 
       final products = <ProductCard>[];
-      for (var i = 0; i < allData.length; i++) {
-        products.add(ProductCard(Product.fromJson(allData[i])));
+      for (var i = 0; i < productsData.length; i++) {
+        products.add(ProductCard(Product.fromJson(productsData[i])));
       }
 
       return products;
