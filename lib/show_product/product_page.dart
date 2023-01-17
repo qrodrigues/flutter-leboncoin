@@ -16,14 +16,13 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     final CollectionReference productsCollection =
-        FirebaseFirestore.instance.collection('products');
+    FirebaseFirestore.instance.collection('products');
 
     Future<List<ProductCard>> getProducts() async {
-      // Get docs from collection reference
       final productsData = await productsCollection.get();
-      // Get data from docs and convert map to List
+
       final jsonProductsData =
-          productsData.docs.map((doc) => doc.data()).toList();
+      productsData.docs.map((doc) => doc.data()).toList();
 
       final products = <ProductCard>[];
       for (var i = 0; i < jsonProductsData.length; i++) {
@@ -35,10 +34,8 @@ class _ProductPageState extends State<ProductPage> {
     }
 
     return FutureBuilder<List<ProductCard>>(
-      //Fetching data from the documentId specified of the student
       future: getProducts(),
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
-        //Error Handling conditions
         if (snapshot.hasError) {
           return const Text('Something went wrong');
         }
@@ -47,7 +44,6 @@ class _ProductPageState extends State<ProductPage> {
           return const Text('Document does not exist');
         }
 
-        //Data is output to the user
         if (snapshot.connectionState == ConnectionState.done) {
           return Scaffold(
             appBar: AppBar(
