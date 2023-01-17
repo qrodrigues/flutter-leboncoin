@@ -13,16 +13,6 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
-  /*
-  final List<ProductCard> products = [
-    const ProductCard('Trottinette électrique Xiaomi', 200, "description"),
-    const ProductCard('Volkswagen Polo', 10000, "description"),
-    const ProductCard('Table en bois', 140, "description"),
-    const ProductCard('Lots de boulons', 20, "description")
-  ];
-
-   */
-
   @override
   Widget build(BuildContext context) {
     final CollectionReference advertisements =
@@ -41,8 +31,6 @@ class _ProductPageState extends State<ProductPage> {
 
       return products;
     }
-
-    getAdvertisements();
 
     return FutureBuilder<List<ProductCard>>(
       //Fetching data from the documentId specified of the student
@@ -71,22 +59,10 @@ class _ProductPageState extends State<ProductPage> {
               ],
             ),
           );
-          ;
         }
 
         return const Text('loading');
       },
-    );
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.adverts),
-      ),
-      backgroundColor: Colors.greenAccent.withOpacity(0.8),
-      body: CustomScrollView(
-        primary: false,
-        slivers: <Widget>[ProductList([])],
-      ),
     );
   }
 }
