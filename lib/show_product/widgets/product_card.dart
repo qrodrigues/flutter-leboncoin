@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 
-class Product extends StatelessWidget {
-  const Product(this.title, this.price, {super.key});
+class ProductCard extends StatelessWidget {
+  const ProductCard({
+    required this.title,
+    required this.price,
+    required this.description,
+    super.key,
+  });
+
+  factory ProductCard.fromJson(dynamic json) {
+    return ProductCard(
+      title: json['titre'] as String,
+      price: double.parse(json['prix'].toString()),
+      description: json['description'] as String,
+    );
+  }
 
   final String title;
   final double price;
+  final String description;
 
   @override
   Widget build(BuildContext context) {

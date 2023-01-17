@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:leboncoin/show_product/widgets/product.dart';
+import 'package:leboncoin/show_product/widgets/product_card.dart';
 import 'package:leboncoin/show_product/widgets/product_list.dart';
 
 class FavoritesPage extends StatefulWidget {
@@ -11,10 +11,13 @@ class FavoritesPage extends StatefulWidget {
 }
 
 class _FavoritesPageState extends State<FavoritesPage> {
-  final List<Product> products = [
-    const Product('Trottinette électrique Xiaomi', 200),
-    const Product('Table en bois', 140),
+  /*
+  final List<ProductCard> products = [
+    const ProductCard('Trottinette électrique Xiaomi', 200, "test"),
+    const ProductCard('Table en bois', 140, "test"),
   ];
+
+   */
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
       backgroundColor: Colors.greenAccent.withOpacity(0.8),
       body: CustomScrollView(
         primary: false,
-        slivers: <Widget>[ProductList(products)],
+        slivers: <Widget>[ProductList([])],
       ),
     );
   }
