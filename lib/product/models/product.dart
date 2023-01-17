@@ -7,8 +7,8 @@ class Product {
 
   factory Product.fromJson(dynamic json) {
     return Product(
-      title: json['titre'] as String,
-      price: double.parse(json['prix'].toString()),
+      title: json['title'] as String,
+      price: double.parse(json['price'].toString()),
       description: json['description'] as String,
     );
   }

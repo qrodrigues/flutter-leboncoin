@@ -16,7 +16,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     final CollectionReference productsCollection =
-        FirebaseFirestore.instance.collection('advertisements');
+        FirebaseFirestore.instance.collection('products');
 
     Future<List<ProductCard>> getAdvertisements() async {
       // Get docs from collection reference

@@ -49,11 +49,11 @@ class _AddProductPageState extends State<AddProductPage> {
                 print(descriptionController.text);
 
                 final CollectionReference productsCollection =
-                    FirebaseFirestore.instance.collection('advertisements');
+                    FirebaseFirestore.instance.collection('products');
 
                 productsCollection.add({
-                  "titre": titleController.text,
-                  "prix": priceController.text,
+                  "title": titleController.text,
+                  "price": priceController.text,
                   "description": descriptionController.text
                 });
               })
