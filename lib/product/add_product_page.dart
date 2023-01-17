@@ -54,7 +54,8 @@ class _AddProductPageState extends State<AddProductPage> {
                 productsCollection.add({
                   "title": titleController.text,
                   "price": priceController.text,
-                  "description": descriptionController.text
+                  "description": descriptionController.text,
+                  "date": DateTime.now()
                 });
               })
             ],

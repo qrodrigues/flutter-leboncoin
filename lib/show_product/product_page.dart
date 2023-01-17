@@ -18,23 +18,25 @@ class _ProductPageState extends State<ProductPage> {
     final CollectionReference productsCollection =
         FirebaseFirestore.instance.collection('products');
 
-    Future<List<ProductCard>> getAdvertisements() async {
+    Future<List<ProductCard>> getProducts() async {
       // Get docs from collection reference
       final querySnapshot = await productsCollection.get();
       // Get data from docs and convert map to List
       final productsData = querySnapshot.docs.map((doc) => doc.data()).toList();
+      print(productsData);
 
       final products = <ProductCard>[];
       for (var i = 0; i < productsData.length; i++) {
         products.add(ProductCard(Product.fromJson(productsData[i])));
       }
+      products.sort((a, b) => a.product.date.compareTo(b.product.date));
 
-      return products;
+      return products.reversed.toList();
     }
 
     return FutureBuilder<List<ProductCard>>(
       //Fetching data from the documentId specified of the student
-      future: getAdvertisements(),
+      future: getProducts(),
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
         //Error Handling conditions
         if (snapshot.hasError) {
