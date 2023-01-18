@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:leboncoin/firebase/add_product.dart';
 import 'package:leboncoin/product/widgets/publish_button.dart';
 import 'package:leboncoin/product/widgets/text_input.dart';
 
@@ -44,19 +45,11 @@ class _AddProductPageState extends State<AddProductPage> {
                 descriptionController,
               ),
               PublishButton(() {
-                print(titleController.text);
-                print(priceController.text);
-                print(descriptionController.text);
-
-                final CollectionReference productsCollection =
-                    FirebaseFirestore.instance.collection('products');
-
-                productsCollection.add({
-                  "title": titleController.text,
-                  "price": priceController.text,
-                  "description": descriptionController.text,
-                  "date": DateTime.now()
-                });
+                FirebaseProduct().addProduct(
+                  titleController,
+                  priceController,
+                  descriptionController,
+                );
               })
             ],
           ),
