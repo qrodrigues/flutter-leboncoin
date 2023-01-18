@@ -20,4 +20,9 @@ class ProductRepository {
 
     return products.reversed.toList();
   }
+
+  Future<List<ProductCard>> getFavoritesProducts() async {
+    // TODO() : récupérer les produits favoris
+    return [];
+  }
 }
