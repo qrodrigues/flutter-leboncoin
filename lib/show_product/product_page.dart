@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leboncoin/firebase/product_repository.dart';
-import 'package:leboncoin/show_product/widgets/product_list_scaffold.dart';
+import 'package:leboncoin/show_product/widgets/product_list.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -12,6 +12,6 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
-    return ProductListScaffold(ProductRepository().getAllProducts());
+    return ProductList(ProductRepository().getAllProducts());
   }
 }
