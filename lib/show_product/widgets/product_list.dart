@@ -31,7 +31,7 @@ class ProductList extends StatelessWidget {
                       yield* snapshot.data! as List<ProductCard>;
                     }()),
                   ),
-                )
+                ),
               ],
             ),
           );

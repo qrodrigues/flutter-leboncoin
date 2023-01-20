@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leboncoin/product/models/product.dart';
+import 'package:leboncoin/show_product/widgets/favorite_icon.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
@@ -31,7 +32,11 @@ class ProductCard extends StatelessWidget {
               child: Text(
                 product.price.toString(),
               ),
-            )
+            ),
+            const Align(
+              alignment: Alignment.bottomLeft,
+              child: FavoriteIcon(),
+            ),
           ],
         ),
       ),
