@@ -3,9 +3,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/show_product/widgets/product_card.dart';
 
 class ProductList extends StatelessWidget {
-  const ProductList(this.products, {super.key});
+  const ProductList(this.products, this.titlePage, {super.key});
 
   final Future<List<ProductCard>> products;
+  final String titlePage;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ProductList extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return Scaffold(
             appBar: AppBar(
-              title: Text(AppLocalizations.of(context)!.adverts),
+              title: Text(titlePage),
             ),
             backgroundColor: Colors.greenAccent.withOpacity(0.8),
             body: CustomScrollView(
