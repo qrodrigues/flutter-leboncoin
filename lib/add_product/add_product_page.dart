@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:leboncoin/add_product/widgets/publish_button.dart';
+import 'package:leboncoin/add_product/widgets/text_input.dart';
 import 'package:leboncoin/api/firebase_api.dart';
-import 'package:leboncoin/product/widgets/publish_button.dart';
-import 'package:leboncoin/product/widgets/text_input.dart';
 
 class AddProductPage extends StatefulWidget {
   const AddProductPage({super.key});
