@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:leboncoin/product/models/product.dart';
 
 class FirebaseProduct {
   final CollectionReference productsCollection =
@@ -16,5 +17,17 @@ class FirebaseProduct {
       'description': descriptionController.text,
       'date': DateTime.now()
     });
+  }
+
+  void updateProductFavoriteField(Product product) {
+    if (product.favorite) {
+      productsCollection.doc(product.id).update(
+        {'favorite': false},
+      );
+    } else {
+      productsCollection.doc(product.id).update(
+        {'favorite': true},
+      );
+    }
   }
 }

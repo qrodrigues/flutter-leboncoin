@@ -14,6 +14,8 @@ class ProductRepository {
 
     final products = <ProductCard>[];
     for (var i = 0; i < jsonProductsData.length; i++) {
+      final dynamic productJson = jsonProductsData[i];
+      productJson!['id'] = productsData.docs[i].id;
       products.add(ProductCard(Product.fromJson(jsonProductsData[i])));
     }
     products.sort((a, b) => a.product.date.compareTo(b.product.date));
@@ -22,7 +24,29 @@ class ProductRepository {
   }
 
   Future<List<ProductCard>> getFavoritesProducts() async {
-    // TODO() : récupérer les produits favoris
-    return [];
+    final productsData =
+        await productsCollection.where('favorite', isEqualTo: true).get();
+
+    final jsonProductsData =
+        productsData.docs.map((doc) => doc.data()).toList();
+
+    final products = <ProductCard>[];
+    for (var i = 0; i < jsonProductsData.length; i++) {
+      final dynamic productJson = jsonProductsData[i];
+      productJson!['id'] = productsData.docs[i].id;
+      products.add(ProductCard(Product.fromJson(jsonProductsData[i])));
+    }
+    products.sort((a, b) => a.product.date.compareTo(b.product.date));
+
+    return products.reversed.toList();
+  }
+
+  Future<DocumentSnapshot> getProductById(String id) async {
+    final productsData =
+        await productsCollection.where('id', isEqualTo: id).get();
+
+    final jsonProductsData = productsData.docs[0];
+
+    return jsonProductsData;
   }
 }
