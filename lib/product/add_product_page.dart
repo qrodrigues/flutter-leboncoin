@@ -1,7 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:leboncoin/firebase/add_product.dart';
+import 'package:leboncoin/api/firebase_api.dart';
 import 'package:leboncoin/product/widgets/publish_button.dart';
 import 'package:leboncoin/product/widgets/text_input.dart';
 
@@ -45,7 +44,7 @@ class _AddProductPageState extends State<AddProductPage> {
                 descriptionController,
               ),
               PublishButton(() {
-                FirebaseProduct().addProduct(
+                FirebaseAPI().addProduct(
                   titleController,
                   priceController,
                   descriptionController,

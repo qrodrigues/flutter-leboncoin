@@ -33,9 +33,11 @@ class ProductCard extends StatelessWidget {
                 product.price.toString(),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: FavoriteIcon(this),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: FavoriteIcon(this),
+              ),
             ),
           ],
         ),

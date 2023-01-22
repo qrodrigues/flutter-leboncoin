@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leboncoin/firebase/product_repository.dart';
+import 'package:leboncoin/repository/product_repository.dart';
 import 'package:leboncoin/show_product/widgets/product_list.dart';
 
 class ProductPage extends StatefulWidget {

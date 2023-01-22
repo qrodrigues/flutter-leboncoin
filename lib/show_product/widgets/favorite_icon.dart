@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leboncoin/firebase/add_product.dart';
+import 'package:leboncoin/api/firebase_api.dart';
 import 'package:leboncoin/show_product/widgets/product_card.dart';
 
 class FavoriteIcon extends StatefulWidget {
@@ -29,12 +29,12 @@ class _FavoriteIconState extends State<FavoriteIcon> {
         setState(() {
           if (!widget.productCard.product.favorite) {
             _iconColor = Colors.yellow.shade700;
-            FirebaseProduct()
+            FirebaseAPI()
                 .updateProductFavoriteField(widget.productCard.product);
             widget.productCard.product.favorite = true;
           } else {
             _iconColor = Colors.black;
-            FirebaseProduct()
+            FirebaseAPI()
                 .updateProductFavoriteField(widget.productCard.product);
             widget.productCard.product.favorite = false;
           }
