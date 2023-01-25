@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Product extends StatelessWidget {
-  const Product(this.title, this.price, {super.key});
+  const Product(this.titre, this.prix, this.description, {super.key});
 
-  final String title;
-  final double price;
+  final String titre;
+  final double prix;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,12 @@ class Product extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.topLeft,
-              child: Text(title),
+              child: Text(titre),
             ),
             Align(
               alignment: Alignment.topRight,
               child: Text(
-                price.toString(),
+                prix.toString(),
               ),
             )
           ],
