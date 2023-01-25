@@ -15,7 +15,8 @@ class FirebaseAPI {
       'title': titleController.text,
       'price': priceController.text,
       'description': descriptionController.text,
-      'date': DateTime.now()
+      'date': DateTime.now(),
+      'favorite': false
     });
   }
 
