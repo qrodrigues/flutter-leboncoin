@@ -31,16 +31,19 @@ class _AddProductPageState extends State<AddProductPage> {
                 AppLocalizations.of(context)!.advert_title,
                 1,
                 titleController,
+                false
               ),
               TextInput(
                 AppLocalizations.of(context)!.price,
                 1,
                 priceController,
+                true
               ),
               TextInput(
                 AppLocalizations.of(context)!.description,
                 10,
                 descriptionController,
+                false
               ),
               PublishButton(() {
                 FirebaseAPI().addProduct(
