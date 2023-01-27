@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:leboncoin/product/add_product_page.dart';
+import 'package:leboncoin/add_product/add_product_page.dart';
 import 'package:leboncoin/show_product/favorites_page.dart';
 import 'package:leboncoin/show_product/product_page.dart';
 
@@ -31,26 +31,36 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.search),
-            label: AppLocalizations.of(context)!.search,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.star),
-            label: AppLocalizations.of(context)!.favorites,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.add),
-            label: AppLocalizations.of(context)!.create,
-          )
-        ],
-        currentIndex: _selectedIndex,
-        unselectedItemColor: Colors.deepOrangeAccent,
-        selectedItemColor: Colors.greenAccent,
-        onTap: _onItemTapped,
+          color: Colors.red,
+        ),
+        child: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.search),
+              label: AppLocalizations.of(context)!.search,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.star),
+              label: AppLocalizations.of(context)!.favorites,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.add),
+              label: AppLocalizations.of(context)!.create,
+            )
+          ],
+          currentIndex: _selectedIndex,
+          unselectedItemColor: Colors.deepOrangeAccent,
+          selectedItemColor: Colors.greenAccent,
+          onTap: _onItemTapped,
+        ),
       ),
     );
+
   }
 }
