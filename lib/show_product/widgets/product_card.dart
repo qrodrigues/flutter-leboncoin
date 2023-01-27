@@ -25,7 +25,12 @@ class ProductCard extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(bottom: 4),
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(product.image1),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: SizedBox(
                 height: 95,
                 child: Expanded(

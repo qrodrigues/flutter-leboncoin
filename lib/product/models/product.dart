@@ -8,6 +8,7 @@ class Product {
     required this.description,
     required this.date,
     required this.favorite,
+    required this.image1
   });
 
   factory Product.fromJson(dynamic json) {
@@ -18,6 +19,7 @@ class Product {
       description: json['description'] as String,
       date: json['date'] as Timestamp,
       favorite: json['favorite'] as bool,
+      image1: json['image1'] as String
     );
   }
 
@@ -27,4 +29,5 @@ class Product {
   final String description;
   final Timestamp date;
   bool favorite;
+  final String image1;
 }
