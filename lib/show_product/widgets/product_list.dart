@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/show_product/widgets/product_card.dart';
 
+import 'customAppBar.dart';
+
 class ProductList extends StatelessWidget {
   const ProductList(this.products, this.titlePage, {super.key});
 
@@ -15,9 +17,7 @@ class ProductList extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return Scaffold(
-            appBar: AppBar(
-              title: Text(titlePage),
-            ),
+            appBar: customAppBar(title: this.titlePage),
             backgroundColor: Colors.greenAccent.withOpacity(0.8),
             body: CustomScrollView(
               primary: false,
