@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/add_product/widgets/publish_button.dart';
 import 'package:leboncoin/add_product/widgets/text_input.dart';
 import 'package:leboncoin/api/firebase_api.dart';
+import 'package:leboncoin/show_product/widgets/customAppBar.dart';
 
 class AddProductPage extends StatefulWidget {
   const AddProductPage({super.key});
@@ -19,9 +20,7 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.create_advert),
-      ),
+      appBar: customAppBar(title: AppLocalizations.of(context)!.create_advert),
       backgroundColor: Colors.greenAccent.withOpacity(0.8),
       body: Center(
         child: Padding(
@@ -49,6 +48,9 @@ class _AddProductPageState extends State<AddProductPage> {
                   priceController,
                   descriptionController,
                 );
+                titleController.clear();
+                priceController.clear();
+                descriptionController.clear();
               })
             ],
           ),
