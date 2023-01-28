@@ -7,15 +7,22 @@ class customAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 70),
+      padding: EdgeInsets.only(top: 70, right: 100, left: 100),
       child: Align(
         alignment: Alignment.center,
         child: Container(
-          width: 150,
           height: 50,
           decoration: BoxDecoration(
             color: Color(0xfffee9e1),
             borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              BoxShadow(
+                offset: Offset(0, 4),
+                spreadRadius: 0,
+                blurRadius: 4,
+                color: Color.fromRGBO(0, 0, 0, 0.25),
+              )
+            ]
           ),
           child: Padding(
             padding: EdgeInsets.all(10.0),
