@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/add_product/widgets/publish_button.dart';
 import 'package:leboncoin/add_product/widgets/text_input.dart';
-import 'package:leboncoin/api/firebase_api.dart';
+import 'package:leboncoin/service/firebase_api.dart';
 import 'package:leboncoin/show_product/widgets/customAppBar.dart';
+import 'package:leboncoin/themes/color.dart';
 
 class AddProductPage extends StatefulWidget {
   const AddProductPage({super.key});
@@ -21,7 +22,7 @@ class _AddProductPageState extends State<AddProductPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(title: AppLocalizations.of(context)!.create_advert),
-      backgroundColor: Color(0xff86cb92),
+      backgroundColor: kPrimaryColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(10),
@@ -46,18 +47,36 @@ class _AddProductPageState extends State<AddProductPage> {
                 false
               ),
               PublishButton(() {
+                if(num.tryParse(priceController.text) == null || titleController.text == null || descriptionController.text == null){
+                  _showToast(context, 'Une erreur est survenue.');
+                  clearData();
+                  return;
+                }
                 FirebaseAPI().addProduct(
                   titleController,
                   priceController,
                   descriptionController,
                 );
-                titleController.clear();
-                priceController.clear();
-                descriptionController.clear();
+                _showToast(context, 'Le produit a été publié avec succès.');
+                clearData();
               })
             ],
           ),
         ),
+      ),
+    );
+  }
+  void clearData() {
+    titleController.clear();
+    priceController.clear();
+    descriptionController.clear();
+  }
+
+  void _showToast(BuildContext context, String message) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: Text(message)
       ),
     );
   }

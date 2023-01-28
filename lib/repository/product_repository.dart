@@ -4,7 +4,7 @@ import 'package:leboncoin/show_product/widgets/product_card.dart';
 
 class ProductRepository {
   final CollectionReference productsCollection =
-  FirebaseFirestore.instance.collection('products');
+      FirebaseFirestore.instance.collection('products');
 
   Future<List<ProductCard>> getAllProducts() async {
     final productsData = await productsCollection.get();
@@ -17,10 +17,9 @@ class ProductRepository {
     return products.reversed.toList();
   }
 
-
   Future<List<ProductCard>> getFavoritesProducts() async {
     final productsData =
-    await productsCollection.where('favorite', isEqualTo: true).get();
+        await productsCollection.where('favorite', isEqualTo: true).get();
 
     final products = createProductCarListFromProductList(
       productsData,
@@ -31,9 +30,10 @@ class ProductRepository {
   }
 
   List<ProductCard> createProductCarListFromProductList(
-      QuerySnapshot<Object?> productsData,) {
+    QuerySnapshot<Object?> productsData,
+  ) {
     final jsonProductsData =
-    productsData.docs.map((doc) => doc.data()).toList();
+        productsData.docs.map((doc) => doc.data()).toList();
 
     final products = <ProductCard>[];
     for (var i = 0; i < jsonProductsData.length; i++) {

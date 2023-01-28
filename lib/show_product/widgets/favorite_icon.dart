@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leboncoin/api/firebase_api.dart';
+import 'package:leboncoin/service/firebase_api.dart';
 import 'package:leboncoin/show_product/widgets/product_card.dart';
 
 class FavoriteIcon extends StatefulWidget {

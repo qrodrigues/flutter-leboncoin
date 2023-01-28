@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/add_product/add_product_page.dart';
 import 'package:leboncoin/show_product/favorites_page.dart';
 import 'package:leboncoin/show_product/product_page.dart';
+import 'package:leboncoin/themes/color.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -55,8 +56,8 @@ class _HomePageState extends State<HomePage> {
             )
           ],
           currentIndex: _selectedIndex,
-          unselectedItemColor: Color(0xffe84855),
-          selectedItemColor: Color(0xff71B48D),
+          unselectedItemColor: kSecondaryColor,
+          selectedItemColor: kPrimaryLightColor,
           onTap: _onItemTapped,
         ),
       ),
