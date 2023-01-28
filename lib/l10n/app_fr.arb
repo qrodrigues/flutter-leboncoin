@@ -1,12 +1,13 @@
 {
   "search": "Recherche",
-  "favorites": "Favoris",
+  "favorites": "Vos favoris",
   "create": "Créer",
   "create_advert": "Créer une annonce",
   "advert_title": " Titre de l'annonce",
   "price": "Prix",
   "description": "Description",
   "publish": "Publier",
-  "adverts": "Annonces",
-  "product_loading": "Chargement des produits"
+  "adverts": "Les annonces",
+  "product_loading": "Chargement des produits...",
+  "no_data": "Aucun élément trouvé."
 }

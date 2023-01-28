@@ -16,8 +16,17 @@ class ProductList extends StatelessWidget {
       future: products,
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.data?.length == 0) {
+            return Scaffold(
+              appBar: customAppBar(title: titlePage),
+              backgroundColor: Colors.greenAccent.withOpacity(0.8),
+              body: Center(
+                child: Text(AppLocalizations.of(context)!.no_data),
+              ),
+            );
+          }
           return Scaffold(
-            appBar: customAppBar(title: this.titlePage),
+            appBar: customAppBar(title: titlePage),
             backgroundColor: Colors.greenAccent.withOpacity(0.8),
             body: CustomScrollView(
               primary: false,
@@ -38,8 +47,13 @@ class ProductList extends StatelessWidget {
             ),
           );
         }
-
-        return Text(AppLocalizations.of(context)!.product_loading);
+        return Scaffold(
+          appBar: customAppBar(title: titlePage),
+          backgroundColor: Colors.greenAccent.withOpacity(0.8),
+          body: Center(
+            child: Text(AppLocalizations.of(context)!.product_loading),
+          ),
+        );
       },
     );
   }
