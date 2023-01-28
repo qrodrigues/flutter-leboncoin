@@ -17,10 +17,12 @@ class TextInput extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           labelText: label,
+          labelStyle: TextStyle(color: Colors.black),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: Color(0xffd9d9d9),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none
           ),
         ),
         maxLines: size,

@@ -15,7 +15,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
   Widget build(BuildContext context) {
     return ProductList(
       ProductRepository().getFavoritesProducts(),
-      AppLocalizations.of(context)!.favorites,
+      AppLocalizations.of(context)!.show_favorites,
     );
   }
 }

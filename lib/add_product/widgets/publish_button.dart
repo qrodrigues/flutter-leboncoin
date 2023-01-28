@@ -8,13 +8,28 @@ class PublishButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: onPressed,
-      icon: const Icon(
-        Icons.check,
-        size: 24,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Color(0xfffee9e1),
       ),
-      label: Text(AppLocalizations.of(context)!.publish),
+      onPressed: onPressed,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            AppLocalizations.of(context)!.publish,
+            style: TextStyle(color: Colors.black),
+          ),
+          const SizedBox(width: 10),
+          const Icon(
+            Icons.check,
+            size: 24,
+            color: Colors.black,
+          ),
+        ],
+      ),
     );
   }
+
 }

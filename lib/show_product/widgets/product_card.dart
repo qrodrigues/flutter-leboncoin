@@ -53,7 +53,7 @@ class ProductCard extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Text(product.price.toInt().toString() + '€',
-                      style: TextStyle(fontSize: 16, color: Colors.green)),
+                      style: TextStyle(fontSize: 16, color: Color(0xff71B48D))),
                 ),
               ],
             ),

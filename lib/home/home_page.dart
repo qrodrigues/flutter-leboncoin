@@ -55,8 +55,8 @@ class _HomePageState extends State<HomePage> {
             )
           ],
           currentIndex: _selectedIndex,
-          unselectedItemColor: Colors.deepOrangeAccent,
-          selectedItemColor: Colors.greenAccent,
+          unselectedItemColor: Color(0xffe84855),
+          selectedItemColor: Color(0xff71B48D),
           onTap: _onItemTapped,
         ),
       ),

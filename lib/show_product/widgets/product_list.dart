@@ -19,7 +19,7 @@ class ProductList extends StatelessWidget {
           if (snapshot.data?.length == 0) {
             return Scaffold(
               appBar: customAppBar(title: titlePage),
-              backgroundColor: Colors.greenAccent.withOpacity(0.8),
+              backgroundColor: Color(0xff86cb92),
               body: Center(
                 child: Text(AppLocalizations.of(context)!.no_data),
               ),
@@ -27,7 +27,7 @@ class ProductList extends StatelessWidget {
           }
           return Scaffold(
             appBar: customAppBar(title: titlePage),
-            backgroundColor: Colors.greenAccent.withOpacity(0.8),
+            backgroundColor: Color(0xff86cb92),
             body: CustomScrollView(
               primary: false,
               slivers: <Widget>[
@@ -49,7 +49,7 @@ class ProductList extends StatelessWidget {
         }
         return Scaffold(
           appBar: customAppBar(title: titlePage),
-          backgroundColor: Colors.greenAccent.withOpacity(0.8),
+          backgroundColor: Color(0xff86cb92),
           body: Center(
             child: Text(AppLocalizations.of(context)!.product_loading),
           ),

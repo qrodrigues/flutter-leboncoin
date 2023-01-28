@@ -21,7 +21,7 @@ class _AddProductPageState extends State<AddProductPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(title: AppLocalizations.of(context)!.create_advert),
-      backgroundColor: Colors.greenAccent.withOpacity(0.8),
+      backgroundColor: Color(0xff86cb92),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(10),
