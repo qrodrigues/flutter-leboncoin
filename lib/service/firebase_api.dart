@@ -17,7 +17,7 @@ class FirebaseAPI {
       'description': descriptionController.text,
       'date': DateTime.now(),
       'favorite': false,
-      'image1': 'https://firebasestorage.googleapis.com/v0/b/market-place-app-e8464.appspot.com/o/custom-no-image.png?alt=media&token=5cd04ba6-f43d-444a-9943-6059e2df7a88'
+      'image1': 'https://firebasestorage.googleapis.com/v0/b/market-place-app-e8464.appspot.com/o/custom-no-image.png?alt=media&token=d1fad652-eb6f-490f-9efe-4a4177178e7d'
     });
   }
 
