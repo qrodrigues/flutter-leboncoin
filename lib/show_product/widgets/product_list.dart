@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:leboncoin/home/widgets/customAppBar.dart';
 import 'package:leboncoin/show_product/widgets/product_card.dart';
 import 'package:leboncoin/themes/color.dart';
-
-import '../../home/widgets/customAppBar.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList(this.products, this.titlePage, {super.key});
@@ -17,9 +16,9 @@ class ProductList extends StatelessWidget {
       future: products,
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.data?.length == 0) {
+          if (snapshot.data!.isEmpty) {
             return Scaffold(
-              appBar: customAppBar(title: titlePage),
+              appBar: CustomAppBar(title: titlePage),
               backgroundColor: kPrimaryColor,
               body: Center(
                 child: Text(AppLocalizations.of(context)!.no_data),
@@ -27,7 +26,7 @@ class ProductList extends StatelessWidget {
             );
           }
           return Scaffold(
-            appBar: customAppBar(title: titlePage),
+            appBar: CustomAppBar(title: titlePage),
             backgroundColor: kPrimaryColor,
             body: CustomScrollView(
               primary: false,
@@ -49,7 +48,7 @@ class ProductList extends StatelessWidget {
           );
         }
         return Scaffold(
-          appBar: customAppBar(title: titlePage),
+          appBar: CustomAppBar(title: titlePage),
           backgroundColor: kPrimaryColor,
           body: Center(
             child: Text(AppLocalizations.of(context)!.product_loading),

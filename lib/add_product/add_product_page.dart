@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/add_product/widgets/publish_button.dart';
 import 'package:leboncoin/add_product/widgets/text_input.dart';
-import 'package:leboncoin/service/firebase_api.dart';
 import 'package:leboncoin/home/widgets/customAppBar.dart';
+import 'package:leboncoin/service/firebase_api.dart';
 import 'package:leboncoin/themes/color.dart';
 
 class AddProductPage extends StatefulWidget {
@@ -21,7 +21,7 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(title: AppLocalizations.of(context)!.create_advert),
+      appBar: CustomAppBar(title: AppLocalizations.of(context)!.create_advert),
       backgroundColor: kPrimaryColor,
       body: Center(
         child: Padding(
@@ -32,22 +32,22 @@ class _AddProductPageState extends State<AddProductPage> {
                 AppLocalizations.of(context)!.advert_title,
                 1,
                 titleController,
-                false
+                isNumber: false,
               ),
               TextInput(
                 AppLocalizations.of(context)!.price,
                 1,
                 priceController,
-                true
+                isNumber: true,
               ),
               TextInput(
                 AppLocalizations.of(context)!.description,
                 10,
                 descriptionController,
-                false
+                isNumber: false,
               ),
               PublishButton(() {
-                if(num.tryParse(priceController.text) == null || titleController.text == null || descriptionController.text == null){
+                if (num.tryParse(priceController.text) == null) {
                   _showToast(context, 'Une erreur est survenue.');
                   clearData();
                   return;
@@ -66,6 +66,7 @@ class _AddProductPageState extends State<AddProductPage> {
       ),
     );
   }
+
   void clearData() {
     titleController.clear();
     priceController.clear();
@@ -75,9 +76,7 @@ class _AddProductPageState extends State<AddProductPage> {
   void _showToast(BuildContext context, String message) {
     final scaffold = ScaffoldMessenger.of(context);
     scaffold.showSnackBar(
-      SnackBar(
-        content: Text(message)
-      ),
+      SnackBar(content: Text(message)),
     );
   }
 }

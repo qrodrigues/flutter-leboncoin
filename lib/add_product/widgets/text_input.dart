@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
-  const TextInput(this.label, this.size, this.controller, this.isNumber, {super.key});
+  const TextInput(
+    this.label,
+    this.size,
+    this.controller, {
+    required this.isNumber,
+    super.key,
+  });
 
   final String label;
   final int size;
@@ -17,12 +23,12 @@ class TextInput extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: TextStyle(color: Colors.black),
+          labelStyle: const TextStyle(color: Colors.black),
           filled: true,
-          fillColor: Color(0xffd9d9d9),
+          fillColor: const Color(0xffd9d9d9),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none
+            borderSide: BorderSide.none,
           ),
         ),
         maxLines: size,

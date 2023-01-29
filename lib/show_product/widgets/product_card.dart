@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:leboncoin/home/home_page.dart';
 import 'package:leboncoin/product/models/product.dart';
 import 'package:leboncoin/show_product/product_detail_screen.dart';
 import 'package:leboncoin/show_product/widgets/favorite_icon.dart';
@@ -15,10 +14,10 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProductDetailScreen(this.product)),
+          MaterialPageRoute(builder: (context) => ProductDetailScreen(product)),
         );
       },
       child: DecoratedBox(
@@ -30,13 +29,13 @@ class ProductCard extends StatelessWidget {
         ),
         child: Column(
           children: <Widget>[
-            Container(
+            DecoratedBox(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(product.image1),
                   fit: BoxFit.cover,
                 ),
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),
               ),
@@ -57,21 +56,27 @@ class ProductCard extends StatelessWidget {
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
-                    child: Text(product.title, style: TextStyle(fontSize: 16)),
+                    child: Text(
+                      product.title,
+                      style: const TextStyle(fontSize: 16),
+                    ),
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
-                    child: Text(product.price.toInt().toString() + '€',
-                        style: TextStyle(fontSize: 16, color: Color(0xff71B48D))),
+                    child: Text(
+                      '${product.price.toInt()}€',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Color(0xff71B48D),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-
           ],
         ),
       ),
     );
-
   }
 }

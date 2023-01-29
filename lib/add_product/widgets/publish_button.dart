@@ -10,16 +10,15 @@ class PublishButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xfffee9e1),
+        backgroundColor: const Color(0xfffee9e1),
       ),
       onPressed: onPressed,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Text(
             AppLocalizations.of(context)!.publish,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
           const SizedBox(width: 10),
           const Icon(
@@ -31,5 +30,4 @@ class PublishButton extends StatelessWidget {
       ),
     );
   }
-
 }
