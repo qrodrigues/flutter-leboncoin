@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/add_product/add_product_page.dart';
-import 'package:leboncoin/show_product/favorites_page.dart';
-import 'package:leboncoin/show_product/product_page.dart';
+import 'package:leboncoin/show_product/favorites_screen.dart';
+import 'package:leboncoin/show_product/product_screen.dart';
 import 'package:leboncoin/themes/color.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,8 +15,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    ProductPage(),
-    FavoritesPage(),
+    ProductScreen(),
+    FavoritesScreen(),
     AddProductPage()
   ];
 

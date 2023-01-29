@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leboncoin/home/home_page.dart';
 import 'package:leboncoin/product/models/product.dart';
-import 'package:leboncoin/show_product/product_detail_page.dart';
+import 'package:leboncoin/show_product/product_detail_screen.dart';
 import 'package:leboncoin/show_product/widgets/favorite_icon.dart';
 
 class ProductCard extends StatelessWidget {
@@ -16,10 +16,9 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        print(this.product.title);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DetailProductPage(this.product)),
+          MaterialPageRoute(builder: (context) => ProductDetailScreen(this.product)),
         );
       },
       child: DecoratedBox(

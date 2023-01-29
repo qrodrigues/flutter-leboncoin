@@ -3,14 +3,14 @@ import 'package:leboncoin/repository/product_repository.dart';
 import 'package:leboncoin/show_product/widgets/product_list.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class FavoritesPage extends StatefulWidget {
-  const FavoritesPage({super.key});
+class FavoritesScreen extends StatefulWidget {
+  const FavoritesScreen({super.key});
 
   @override
-  State<FavoritesPage> createState() => _FavoritesPageState();
+  State<FavoritesScreen> createState() => _FavoritesScreenState();
 }
 
-class _FavoritesPageState extends State<FavoritesPage> {
+class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return ProductList(

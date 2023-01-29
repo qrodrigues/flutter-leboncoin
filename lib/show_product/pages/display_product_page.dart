@@ -19,7 +19,7 @@ class DisplayProductPage extends StatelessWidget {
           padding: EdgeInsets.all(12),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Padding(padding: EdgeInsets.only(top: 10, bottom: 10), child: Text('Images', style: product_detail_section),),
+                Padding(padding: EdgeInsets.only(top: 10, bottom: 10), child: Text('Image', style: product_detail_section),),
                 Image.network(product.image1),
                 Padding(padding: EdgeInsets.only(top: 20), child: Text('Description', style: product_detail_section),),
             Text(product.description,

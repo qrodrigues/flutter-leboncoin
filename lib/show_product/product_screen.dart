@@ -4,14 +4,14 @@ import 'package:leboncoin/repository/product_repository.dart';
 import 'package:leboncoin/show_product/widgets/product_list.dart';
 
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+class ProductScreen extends StatefulWidget {
+  const ProductScreen({super.key});
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<ProductScreen> createState() => _ProductScreenState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return ProductList(
