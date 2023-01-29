@@ -12,6 +12,10 @@
   "description": "Veuillez décrire votre article...",
   "publish": "Publier l'annonce",
 
+  "detail_title_image": "Image",
+  "detail_title_description": "Description",
+  "detail_title_informations": "Informations",
+
   "product_loading": "Chargement des produits...",
   "no_data": "Aucun élément trouvé."
 }
