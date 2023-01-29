@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:leboncoin/product/models/product.dart';
-import 'package:leboncoin/show_product/widgets/customAppBar.dart';
+import 'package:leboncoin/home/widgets/customAppBar.dart';
 import 'package:leboncoin/themes/color.dart';
 import 'package:leboncoin/themes/textstyle.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

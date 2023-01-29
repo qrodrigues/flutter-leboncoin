@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/add_product/widgets/publish_button.dart';
 import 'package:leboncoin/add_product/widgets/text_input.dart';
 import 'package:leboncoin/service/firebase_api.dart';
-import 'package:leboncoin/show_product/widgets/customAppBar.dart';
+import 'package:leboncoin/home/widgets/customAppBar.dart';
 import 'package:leboncoin/themes/color.dart';
 
 class AddProductPage extends StatefulWidget {

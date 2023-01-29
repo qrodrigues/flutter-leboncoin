@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:leboncoin/show_product/widgets/product_card.dart';
 import 'package:leboncoin/themes/color.dart';
 
-import 'customAppBar.dart';
+import '../../home/widgets/customAppBar.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList(this.products, this.titlePage, {super.key});
