@@ -1,0 +1,21 @@
+{
+  "search": "Recherche",
+  "favorites": "Favoris",
+  "create": "Créer",
+
+   "adverts": "Les annonces",
+   "create_advert": "Créer une annonce",
+   "show_favorites": "Vos favoris",
+
+  "advert_title": " Sous quel nom l’annonce va apparaître ?",
+  "price": "Quel est le prix de votre article ?",
+  "description": "Veuillez décrire votre article...",
+  "publish": "Publier l'annonce",
+
+  "detail_title_image": "Image",
+  "detail_title_description": "Description",
+  "detail_title_informations": "Informations",
+
+  "product_loading": "Chargement des produits...",
+  "no_data": "Aucun élément trouvé."
+}
