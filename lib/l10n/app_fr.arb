@@ -14,11 +14,11 @@
   "detail_title_informations": "Informations",
   "product_loading": "Chargement des produits...",
   "no_data": "Aucun élément trouvé.",
-  "appBarText": "{count, plural, =search{Recherche} =create{Créer} =favorite{Favoris}}",
+  "appBarText": "{gender, select, search{Recherche} create{Créer} favorite{Favoris}}",
   "@appBarText": {
-    "description": "",
+    "description": "Return AppBar button text",
     "placeholders": {
-      "count": {
+      "gender": {
         "type": "String"
       }
     }

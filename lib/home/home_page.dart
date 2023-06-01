@@ -135,7 +135,7 @@ class _NavigationBarButton extends StatelessWidget {
               size: 32,
             ),
           ),
-          Text(AppLocalizations.of(context)!.appBarText(value))
+          Text(AppLocalizations.of(context)!.appBarText(value.toString()))
         ],
       ),
     );
