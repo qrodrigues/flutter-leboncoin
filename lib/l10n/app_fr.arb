@@ -13,6 +13,7 @@
   "detail_title_description": "Description",
   "detail_title_informations": "Informations",
   "product_loading": "Chargement des produits...",
+  "product_error": "le chargement des produits a échoué",
   "no_data": "Aucun élément trouvé.",
   "appBarText": "{gender, select, search{Recherche} create{Créer} favorite{Favoris}}",
   "@appBarText": {
